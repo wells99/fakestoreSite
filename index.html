@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fakestore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="p-[60px] bg-orange-500">
+    <div class="flex lg:flex-row flex-col justify-between bg-white p-4 rounded">
+        <input id="busca" type="text" placeholder="Buscar produto" class="h-[40px] border-2 rounded pl-3 focus:outline-orange-500 duration-200" onkeyup="filtrarPorNome(event.target.value)">
+        <div>
+            <select id="categorias" class="h-[40px] border-2 px-3 rounded focus:outline-orange-500" onchange="filtrarPorCategoria(event.target.value)">
+                <option selected disabled>Filtrar categoria</option>
+            </select>
+            <select id="filtros" class="h-[40px] border-2 px-3 rounded focus:outline-orange-500" onchange="filtrosdeProduto(event.target.value)">
+                <option selected disabled>Filtrar por</option>
+                <option value="menorPreco">Menor Preço</option>
+                <option value="maiorAvaliacao">Melhor Avaliado</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="gradeDeProdutos" class="grid grid-cols-2 lg:grid-cols-5 gap-3 mt-3">
+        
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
